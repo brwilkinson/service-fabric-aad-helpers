@@ -1,12 +1,13 @@
 $Base = $PSScriptRoot
 $t = Get-AzContext | ForEach-Object Tenant | ForEach-Object Id
+$region = 'centralus'
 $prefix = 'acu1'
 $org = 'pe'
 $app = 'sfm'
 $env = 'd1'
 
 $clusterName = "$prefix-$org-$app-$env-sfm01"
-$reply =  "https://$clusterName.centralus.cloudapp.azure.com:29080/Explorer"
+$reply =  "https://$clusterName.$region.cloudapp.azure.com:29080/Explorer"
 
 $Params = @{
     TenantId               = $t
